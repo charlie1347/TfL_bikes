@@ -39,7 +39,7 @@ If you live in London, you've probably noticed the vans that move the bikes arou
 By filtering the dataset to only look at weekdays in either the morning or evening, we can also see the commuting patterns of Londoners:
 
 ![Morning flows](mornings.png)
-![Evening flows](evening.png)
+![Evening flows](evenings.png)
 
 In the above, red represents a station with more bikes leaving than coming in (outflows > inflows), whilst green represents the opposite. As expected, in the morning we see people commuting in to the centre from the suburbs, whilst the opposite occurs in the evening. Canary Wharf is also quite noticeable in the east. 
 
