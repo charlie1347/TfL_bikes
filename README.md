@@ -34,7 +34,15 @@ First, let's look at the most popular bike stations in London. Defining a single
 
 Belgrove Street, Kings Cross is the most popular with 314,729 total flows (157,025 inflows and 157,704 outflows) across the entire dataset. The least popular on the other hand is Bevington Road, North Kensington, with 1,131 total flows (515 inflows and 616 outflows) - however this station was only installed on July 4th 2016.
 
-If you live in London, you've probably noticed the vans that move the bikes around during the day - taking bikes from full stations, and redistributing them to empty stations. By looking at the difference between the inflows and outflows, we can see the stations that are worst affected by this mismatch, and thus require the most frequency redistribution:
+An alternative way of ranking the stations is through Google's [PageRank algorithm](https://en.wikipedia.org/wiki/PageRank). The underlying theory behind the PageRank algorithm is that if a station is frequently linked to via other "important" stations, then the rank of that station will increase:
+
+![PageRank](pagerank.png)
+
+Interestingly our results differ quite a bit from the ranking simply based on number of flows. This would imply that whilst the various stations on the Strand may not have the highest number of flows, they are frequently travelled to via other "important" stations, thus being ranked highly. 
+
+If you live in London, you've probably noticed the vans that move the bikes around during the day - taking bikes from full stations, and redistributing them to empty stations. By looking at the difference between the inflows and outflows, we can see the stations that are worst affected by this mismatch, and thus require the most redistribution.
+
+![Redistribution](redistribution.png)
 
 By filtering the dataset to only look at weekdays in either the morning or evening, we can also see the commuting patterns of Londoners:
 
@@ -68,4 +76,4 @@ The TfL dataset also gives information on the time taken to complete a route. Lo
 ##EMBED HISTOGRAM HERE [link](https://charlie1347.github.io/TfL_bikes/bokeh_plots/histogram.html)
 ![Histogram](histogram.png)
 
-Comparing the two, it would appear that on average, journeys did indeed take longer on the tube strike morning - the modal bin for the control group occurs at less than 10 minutes, whereas for the tube strike morning it is over 16 minutes. Formally we can test this using a [two-sample Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test#Two-sample_Kolmogorov.E2.80.93Smirnov_test). Using this test, the null hypothesis is that the two independent samples are drawn from the same continuous distribution. I get a sample statistic of 0.315, yielding a p-value of ~0 and thus we can reject the null - i.e. we can reject the hypothesis that the distributions of the two samples are the same.
+Comparing the two, it would appear that on average, journeys did indeed take longer on the tube strike morning - the modal bin for the control group occurs at less than 10 minutes, whereas for the tube strike morning it is over 16 minutes. Formally we can test this using a [two-sample Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test#Two-sample_Kolmogorov.E2.80.93Smirnov_test), which tests whether two samples come from the same distribution. Using this test, I find that the two samples are statistically different - i.e. journeys did take longer on the tube strike morning. 
