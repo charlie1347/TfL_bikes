@@ -2,7 +2,7 @@
 
 As part of the free transport data service, Transport for London (TfL) release data on journeys taken using their Santander Cycles - aka "Boris Bikes". The data goes back to January 2015, showing information on the start and end locations of the journey, along with duration and time of day. By combining this information with the coordinates of each cycle hire point, I predicted the most likely journey taken for each start/end combination, as well as looking at the impact of tube strikes on bike usage.
 
-For all the technical details, see the Python notebooks on my github.
+For all the technical details, see the Python notebook on my [github](https://github.com/charlie1347/TfL_bikes).
 
 # The TfL data
 
