@@ -12,7 +12,7 @@ For those unaware, below is a map of all the cycle hire stations across London.
 
 ![All bike points](bike_points.png)
 
-I've also generated a fancy interactive version of this plot in bokeh - click [here](link) to see it (it's 30MB+, so takes a little while to load). You can zoom/scroll with this version, and it also tells you the name and capacity of each location.
+I've also generated a fancy interactive version of this plot in bokeh - click [here](https://charlie1347.github.io/TfL_bikes/bokeh_plots/bike_points.html) to see it (it's 30MB+, so takes a little while to load). You can zoom/scroll with this version, and it also tells you the name and capacity of each location.
 
 # Route prediction
 
@@ -26,8 +26,6 @@ Once I had calculated the waypoints for each route, I plotted the resulting 13+ 
 
 ![Datashader plot](datashader_plot.PNG)
 
-Again, a full interactive version can be seen [here](site). This one is about XXMB so will take a while to load. 
-
 # Analysis of flows
 
 First, let's look at the most popular bike stations in London. Defining a single flow as either someone taking or docking a bike a station, the top bike stations across London are: 
@@ -40,12 +38,12 @@ If you live in London, you've probably noticed the vans that move the bikes arou
 
 By filtering the dataset to only look at weekdays in either the morning or evening, we can also see the commuting patterns of Londoners:
 
-![Morning flows](morning_flows.png)
-![Evening flows](evening_flows.png)
+![Morning flows](mornings.png)
+![Evening flows](evening.png)
 
 In the above, red represents a station with more bikes leaving than coming in (outflows > inflows), whilst green represents the opposite. As expected, in the morning we see people commuting in to the centre from the suburbs, whilst the opposite occurs in the evening. Canary Wharf is also quite noticeable in the east. 
 
-An interactive version of this graph can be seen [here](link) - again, this one is XXMB, so will take a while to load up.
+An interactive version of this graph can be seen [here](https://charlie1347.github.io/TfL_bikes/bokeh_plots/mornings_evenings.html) - again, this one is 30+MB, so will take a while to load up. 
 
 # Impact of tube strikes
 
@@ -53,7 +51,8 @@ On July 8th 2015, there was [London-wide tube strike](http://www.bbc.co.uk/news/
 
 As a simple first metric, the following barchart shows the number of journeys taken between the 9th June and the 9th August in 2015:
 
-##EMBED BARCHART HERE
+##EMBED BARCHART HERE - [link](https://charlie1347.github.io/TfL_bikes/bokeh_plots/journeys_per_day.html)
+![Barchart](journeys_per_day.png)
 
 There is a clear spike in journeys taken on the 9th July. The second spike? [Another tube strike](http://www.bbc.co.uk/news/live/uk-england-london-33674627).
 
@@ -61,10 +60,12 @@ Looking at just the morning of Thursday July 9th between 0700 and 1000, there we
 
 Looking at the individual bike stations, the following graph shows the average number of uses (inflows + outflows) in the control group for the top 10 bike points, comparing this to the usage on the morning of the tube strike:
 
-##EMBED BARCHART HERE
+##EMBED BARCHART HERE [link](https://charlie1347.github.io/TfL_bikes/bokeh_plots/top_stations.html)
+![Barchart](top_stations.png)
 
 The TfL dataset also gives information on the time taken to complete a route. Looking at the distribution of journey duration between the control group and tube strike morning, we get the following histograms:
 
-##EMBED HISTOGRAM HERE
+##EMBED HISTOGRAM HERE [link](https://charlie1347.github.io/TfL_bikes/bokeh_plots/histogram.html)
+![Histogram](histogram.png)
 
 Comparing the two, it would appear that on average, journeys did indeed take longer on the tube strike morning - the modal bin for the control group occurs at less than 10 minutes, whereas for the tube strike morning it is over 16 minutes. Formally we can test this using a [two-sample Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test#Two-sample_Kolmogorov.E2.80.93Smirnov_test). Using this test, the null hypothesis is that the two independent samples are drawn from the same continuous distribution. I get a sample statistic of 0.315, yielding a p-value of ~0 and thus we can reject the null - i.e. we can reject the hypothesis that the distributions of the two samples are the same.
