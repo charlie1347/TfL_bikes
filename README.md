@@ -24,7 +24,7 @@ Whilst Google offers a cycling directions API, 400,000 requests is far beyond th
 
 Once I had calculated the waypoints for each route, I plotted the resulting 13+ million routes using [datashader](https://github.com/bokeh/datashader), aggregating each route by the number of times it was taken (i.e. the thicker the line, the more people used that route). The full plot can be seen below:
 
-![Datashader plot](datashader_plot.PNG)
+![Datashader plot](datashader.png)
 
 # Analysis of flows
 
