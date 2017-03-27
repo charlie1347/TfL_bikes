@@ -80,3 +80,7 @@ The TfL dataset also gives information on the time taken to complete a route. Lo
 [Interactive version here](https://charlie1347.github.io/TfL_bikes/bokeh_plots/histogram.html)
 
 Comparing the two, it would appear that on average, journeys did indeed take longer on the tube strike morning - the modal bin for the control group occurs at less than 10 minutes, whereas for the tube strike morning it is over 16 minutes. Formally I can test this using a [two-sample Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test#Two-sample_Kolmogorov.E2.80.93Smirnov_test), which tests whether two samples come from the same distribution. Using this test, I find that the two samples are statistically different - i.e. journeys did take longer on the tube strike morning. 
+
+
+
+*Credit to Eric Hannell for some of the original inspiration for this analysis - see his blog post "A map of the bikes of London" [here](http://www.erichannell.com/a-map-of-the-bikes-of-london)*
