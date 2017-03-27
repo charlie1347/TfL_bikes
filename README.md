@@ -83,4 +83,4 @@ Comparing the two, it would appear that on average, journeys did indeed take lon
 
 
 
-*Credit to Eric Hannell for some of the original inspiration for this analysis - see his blog post "A map of the bikes of London" [here](http://www.erichannell.com/a-map-of-the-bikes-of-london)*
+*Credit to Eric Hannell for some of the original inspiration for this analysis - see his blog post "A map of the bikes of London" [here](http://www.erichannell.com/a-map-of-the-bikes-of-london).*
