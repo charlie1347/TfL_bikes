@@ -2,7 +2,7 @@
 
 As part of the free transport data service, Transport for London (TfL) release data on journeys taken using their Santander Cycles - aka "Boris Bikes". The data goes back to January 2015, showing information on the start and end locations of the journey, along with duration and time of day. By combining this information with the coordinates of each cycle hire point, I predicted the most likely journey taken for each start/end combination, as well as looking at the impact of tube strikes on bike usage.
 
-For all the technical details, see the Python notebook on my [github](https://github.com/charlie1347/TfL_bikes).
+For all the technical details, see the Python notebook on my github [here](https://github.com/charlie1347/TfL_bikes/blob/master/TfL%20Bikes.ipynb).
 
 # The TfL data
 
@@ -79,7 +79,7 @@ The TfL dataset also gives information on the time taken to complete a route. Lo
 
 [Interactive version here](https://charlie1347.github.io/TfL_bikes/bokeh_plots/histogram.html)
 
-Comparing the two, it would appear that on average, journeys did indeed take longer on the tube strike morning - the modal bin for the control group occurs at less than 10 minutes, whereas for the tube strike morning it is over 16 minutes. Formally I can test this using a [two-sample Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test#Two-sample_Kolmogorov.E2.80.93Smirnov_test), which tests whether two samples come from the same distribution. Using this test, I find that the two samples are statistically different - i.e. journeys did take longer on the tube strike morning. 
+Comparing the two, it would appear that on average, journeys did indeed take longer on the tube strike morning - the modal bin for the control group occurs at less than 10 minutes, whereas for the tube strike morning it is over 16 minutes. Formally I can test this using a [two-sample Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test#Two-sample_Kolmogorov.E2.80.93Smirnov_test), which tests whether two samples come from the same distribution. Using this test, I find that the two samples are statistically different.
 
 
 
